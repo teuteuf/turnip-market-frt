@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b4239c99e01485abd8bd60671b2171a3",
+    "revision": "cdfc1ea9605eb9e7be287c99a581e8b4",
     "url": "/turnip-market-frt/index.html"
   },
   {
-    "revision": "68f55de23bd8c8f1e5fb",
-    "url": "/turnip-market-frt/static/css/main.5f361e03.chunk.css"
+    "revision": "67cbc2e7640eeb753142",
+    "url": "/turnip-market-frt/static/css/main.3d93618d.chunk.css"
   },
   {
-    "revision": "485ce18465ea336a646b",
-    "url": "/turnip-market-frt/static/js/2.a5ae9122.chunk.js"
+    "revision": "f3b141e6e851b39ea7a9",
+    "url": "/turnip-market-frt/static/js/2.eb5316d1.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/turnip-market-frt/static/js/2.a5ae9122.chunk.js.LICENSE.txt"
+    "url": "/turnip-market-frt/static/js/2.eb5316d1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "68f55de23bd8c8f1e5fb",
-    "url": "/turnip-market-frt/static/js/main.30c6da59.chunk.js"
+    "revision": "67cbc2e7640eeb753142",
+    "url": "/turnip-market-frt/static/js/main.f0c5fe1b.chunk.js"
   },
   {
     "revision": "d7306a84e966f85020f9",
