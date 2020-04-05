@@ -24,5 +24,8 @@ module.exports = {
                 requireLast: false,
             },
         }]
+    },
+    'env': {
+        'jest': true
     }
 }
