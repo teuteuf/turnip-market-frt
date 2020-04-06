@@ -1,24 +1,28 @@
-import React from 'react'
-import logo from './logo.svg'
-import styles from './App.module.css'
+import React, { useEffect, useState } from 'react'
+import PseudoInput from './PseudoInput'
 
-const App: React.FC = () => (
-  <div className={styles.App}>
-    <header className={styles.header}>
-      <img src={logo} className={styles.logo} alt="logo"/>
-      <p>
-                Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className={styles.link}
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-                Learn React
-      </a>
-    </header>
-  </div>
-)
+const keyLocalStoragePseudo = 'pseudo'
+
+const App: React.FC = () => {
+  const [pseudo, setPseudo] = useState(localStorage.getItem(keyLocalStoragePseudo))
+
+  useEffect(() => {
+    pseudo && localStorage.setItem(keyLocalStoragePseudo, pseudo)
+  }, [pseudo])
+
+  return (
+    <div>
+      <header>
+        <h1>Turnip Market</h1>
+        {pseudo &&
+        <h2>
+          <span role='img' aria-label='Hello'>👋</span> {pseudo}
+        </h2>
+        }
+      </header>
+      {!pseudo && <PseudoInput setPseudo={setPseudo}/>}
+    </div>
+  )
+}
 
 export default App
