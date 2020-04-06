@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PseudoInput from './PseudoInput'
+import Markets from './Markets'
 
 const keyLocalStoragePseudo = 'pseudo'
 
@@ -14,13 +15,15 @@ const App: React.FC = () => {
     <div>
       <header>
         <h1>Turnip Market</h1>
-        {pseudo &&
-        <h2>
+        {pseudo && <h2>
           <span role='img' aria-label='Hello'>👋</span> {pseudo}
-        </h2>
-        }
+        </h2>}
       </header>
-      {!pseudo && <PseudoInput setPseudo={setPseudo}/>}
+
+      {pseudo
+        ? <Markets pseudo={pseudo}/>
+        : <PseudoInput setPseudo={setPseudo}/>
+      }
     </div>
   )
 }
