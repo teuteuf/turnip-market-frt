@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ebf3535afa54e9ec86f4f32b92d7d0f0",
+    "revision": "2e96be05506cda0c889c127bb7e0aabb",
     "url": "/turnip-market-frt/index.html"
   },
   {
-    "revision": "73574167a3e11681f208",
+    "revision": "a6b1bbbdb8f2c5241f61",
     "url": "/turnip-market-frt/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/turnip-market-frt/static/js/2.267b94a7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "73574167a3e11681f208",
-    "url": "/turnip-market-frt/static/js/main.6ae81606.chunk.js"
+    "revision": "a6b1bbbdb8f2c5241f61",
+    "url": "/turnip-market-frt/static/js/main.5a87d327.chunk.js"
   },
   {
     "revision": "d7306a84e966f85020f9",
