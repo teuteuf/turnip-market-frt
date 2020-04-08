@@ -17,7 +17,7 @@ interface MarketsProps {
   pseudo: string
 }
 
-const Markets: React.FC<MarketsProps> = ({pseudo}) => {
+const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   const [marketIds, setMarketIds] = useState<string[]>(getMarketIdsFromLocalStorage())
 
   const addMarketId = (newMarketId: string) => setMarketIds([...marketIds, newMarketId])
@@ -27,7 +27,7 @@ const Markets: React.FC<MarketsProps> = ({pseudo}) => {
   }, [marketIds])
 
   return <div>
-    <MarketsSelection addMarketId={addMarketId} />
+    <MarketsSelection addMarketId={addMarketId}/>
     {marketIds.join(', ')}
   </div>
 }

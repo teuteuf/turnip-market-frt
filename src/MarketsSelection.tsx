@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
+import * as MarketRepository from './MarketRepository'
 
 interface MarketsSelectionProps {
   addMarketId: (marketId: string) => void
 }
 
-const MarketsSelection: React.FC<MarketsSelectionProps> = ({ addMarketId }) => {
+const MarketsSelection: React.FC<MarketsSelectionProps> = ({ addMarketId }: MarketsSelectionProps) => {
   const [newMarketName, setNewMarketName] = useState()
   const [existingMarketId, setExistingMarketId] = useState()
 
-  const createMarket = () => console.log(newMarketName)
-  const joinMarket = () => addMarketId(existingMarketId)
+  const createMarket: () => Promise<void> = async () => {
+    const market = await MarketRepository.createMarket(newMarketName)
+    addMarketId(market.id)
+  }
+  const joinMarket: () => void = () => addMarketId(existingMarketId)
 
   return <div>
     <div>

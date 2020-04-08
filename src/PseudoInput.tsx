@@ -4,7 +4,7 @@ interface PseudoInputProps {
   setPseudo: (pseudo: string) => void
 }
 
-const PseudoInput: React.FC<PseudoInputProps> = ({setPseudo}) => {
+const PseudoInput: React.FC<PseudoInputProps> = ({ setPseudo }: PseudoInputProps) => {
   const [typingPseudo, setTypingPseudo] = useState('')
   const validatePseudo: () => void = () => setPseudo(typingPseudo)
 

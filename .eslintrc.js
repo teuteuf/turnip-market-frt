@@ -29,6 +29,7 @@ module.exports = {
         'jest': true
     },
     'globals': {
-        'localStorage': true
+        'localStorage': true,
+        'fetch': true
     }
 }
