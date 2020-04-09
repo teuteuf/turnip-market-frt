@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MarketsSelection from './MarketsSelection'
 import { Market } from './domain/Market'
 import * as MarketRepository from './MarketRepository'
+import MarketWithOffers from './MarketWithOffers'
 
 const keyLocalStorageMarketIds = 'marketIds'
 const marketIdsSeparator = '::'
@@ -39,8 +40,8 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   }, [marketIds])
 
   return <div>
+    {markets.map((market) => <MarketWithOffers key={market.id} market={market}/>)}
     <MarketsSelection addMarketId={addMarketId}/>
-    {markets.map(market => market.name).join(', ')}
   </div>
 }
 
