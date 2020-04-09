@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MarketsSelection from './MarketsSelection'
+import { Market } from './domain/Market'
+import * as MarketRepository from './MarketRepository'
 
 const keyLocalStorageMarketIds = 'marketIds'
 const marketIdsSeparator = '::'
@@ -19,6 +21,16 @@ interface MarketsProps {
 
 const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   const [marketIds, setMarketIds] = useState<string[]>(getMarketIdsFromLocalStorage())
+  const [markets, setMarkets] = useState<Market[]>([])
+
+  useEffect(() => {
+    (async (): Promise<void> => {
+      const fetchedMarkets = await Promise.all(
+        marketIds.map(async (marketId) => MarketRepository.findMarket(marketId))
+      )
+      setMarkets(fetchedMarkets)
+    })()
+  }, [marketIds])
 
   const addMarketId = (newMarketId: string) => setMarketIds([...marketIds, newMarketId])
 
@@ -28,7 +40,7 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
 
   return <div>
     <MarketsSelection addMarketId={addMarketId}/>
-    {marketIds.join(', ')}
+    {markets.map(market => market.name).join(', ')}
   </div>
 }
 
