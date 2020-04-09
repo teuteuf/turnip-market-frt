@@ -11,11 +11,11 @@ export const createMarket: CreateMarket = async (marketName) => {
     }
   })
 
-  const { id, name, offers } = await response.json()
+  const { id, name, activeOffers } = await response.json()
 
   return {
     id,
     name,
-    offers
+    activeOffers
   }
 }
