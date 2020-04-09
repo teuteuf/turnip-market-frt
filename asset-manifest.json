@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/turnip-market-frt/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/turnip-market-frt/static/js/main.5a87d327.chunk.js",
-    "main.js.map": "/turnip-market-frt/static/js/main.5a87d327.chunk.js.map",
+    "main.js": "/turnip-market-frt/static/js/main.7cf67913.chunk.js",
+    "main.js.map": "/turnip-market-frt/static/js/main.7cf67913.chunk.js.map",
     "runtime-main.js": "/turnip-market-frt/static/js/runtime-main.39c5e183.js",
     "runtime-main.js.map": "/turnip-market-frt/static/js/runtime-main.39c5e183.js.map",
-    "static/js/2.267b94a7.chunk.js": "/turnip-market-frt/static/js/2.267b94a7.chunk.js",
-    "static/js/2.267b94a7.chunk.js.map": "/turnip-market-frt/static/js/2.267b94a7.chunk.js.map",
+    "static/js/2.ddb1d318.chunk.js": "/turnip-market-frt/static/js/2.ddb1d318.chunk.js",
+    "static/js/2.ddb1d318.chunk.js.map": "/turnip-market-frt/static/js/2.ddb1d318.chunk.js.map",
     "index.html": "/turnip-market-frt/index.html",
-    "precache-manifest.2c5ad9c5846734068a72a4cd568f8a67.js": "/turnip-market-frt/precache-manifest.2c5ad9c5846734068a72a4cd568f8a67.js",
+    "precache-manifest.5c5c0b2e66264228f93da6deefc85b48.js": "/turnip-market-frt/precache-manifest.5c5c0b2e66264228f93da6deefc85b48.js",
     "service-worker.js": "/turnip-market-frt/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/turnip-market-frt/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.267b94a7.chunk.js.LICENSE.txt": "/turnip-market-frt/static/js/2.267b94a7.chunk.js.LICENSE.txt"
+    "static/js/2.ddb1d318.chunk.js.LICENSE.txt": "/turnip-market-frt/static/js/2.ddb1d318.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.39c5e183.js",
-    "static/js/2.267b94a7.chunk.js",
+    "static/js/2.ddb1d318.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.5a87d327.chunk.js"
+    "static/js/main.7cf67913.chunk.js"
   ]
 }
