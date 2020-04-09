@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import MarketsSelection from './MarketsSelection'
 import { Market } from './domain/Market'
 import * as MarketRepository from './MarketRepository'
 import MarketWithOffers from './MarketWithOffers'
+import AddOffer from './AddOffer'
 
 const keyLocalStorageMarketIds = 'marketIds'
 const marketIdsSeparator = '::'
@@ -24,14 +25,16 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   const [marketIds, setMarketIds] = useState<string[]>(getMarketIdsFromLocalStorage())
   const [markets, setMarkets] = useState<Market[]>([])
 
-  useEffect(() => {
-    (async (): Promise<void> => {
-      const fetchedMarkets = await Promise.all(
-        marketIds.map(async (marketId) => MarketRepository.findMarket(marketId))
-      )
-      setMarkets(fetchedMarkets)
-    })()
+  const refreshMarkets = useCallback(async () => {
+    const fetchedMarkets = await Promise.all(
+      marketIds.map(async (marketId) => MarketRepository.findMarket(marketId))
+    )
+    setMarkets(fetchedMarkets)
   }, [marketIds])
+
+  useEffect(() => {
+    refreshMarkets()
+  }, [marketIds, refreshMarkets])
 
   const addMarketId = (newMarketId: string) => setMarketIds([...marketIds, newMarketId])
 
@@ -40,6 +43,7 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   }, [marketIds])
 
   return <div>
+    <AddOffer pseudo={pseudo} marketIds={marketIds} refreshMarkets={refreshMarkets} />
     {markets.map((market) => <MarketWithOffers key={market.id} market={market}/>)}
     <MarketsSelection addMarketId={addMarketId}/>
   </div>

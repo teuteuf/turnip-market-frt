@@ -1,7 +1,9 @@
 import { Market } from './domain/Market'
+import { Offer } from './domain/Offer'
 
 type CreateMarket = (marketName: string) => Promise<Market>
 type FindMarket = (marketId: string) => Promise<Market>
+type PostOffer = (marketId: string, offer: Offer) => Promise<Offer>
 
 export const createMarket: CreateMarket = async (marketName) => {
   const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/markets/`, {
@@ -35,5 +37,24 @@ export const findMarket: FindMarket = async (marketId) => {
     id,
     name,
     activeOffers
+  }
+}
+
+export const postOffer: PostOffer = async (marketId, offer) => {
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/markets/${marketId}/offers`, {
+    method: 'POST',
+    body: JSON.stringify(offer),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+
+  const { player, startTime, endTime, price } = await response.json()
+
+  return {
+    player,
+    startTime,
+    endTime,
+    price
   }
 }

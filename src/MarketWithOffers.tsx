@@ -7,7 +7,7 @@ interface MarketProps {
 
 const MarketWithOffers: React.FC<MarketProps> = ({ market }: MarketProps) => {
   return <div>
-    <h3>{market.name}</h3>
+    <h3>{market.name} ({market.id})</h3>
     {market.activeOffers.length > 0 && <ul>
       {market.activeOffers.map((offer) =>
         <li key={offer.player}>
