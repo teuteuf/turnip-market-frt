@@ -29,7 +29,7 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
     const fetchedMarkets = await Promise.all(
       marketIds.map(async (marketId) => MarketRepository.findMarket(marketId))
     )
-    setMarkets(fetchedMarkets)
+    setMarkets(fetchedMarkets.filter((market): market is Market => market !== null))
   }, [marketIds])
 
   useEffect(() => {
