@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import { Offer } from './domain/Offer'
-import * as MarketRepository from './MarketRepository'
+import { Offer } from '../../domain/Offer'
+import * as MarketRepository from '../../repositories/MarketRepository'
 
 interface AddOfferProps {
-  pseudo: string,
-  marketIds: string[],
+  pseudo: string
+  marketIds: string[]
   refreshMarkets: () => void
 }
 
 const AddOffer: React.FC<AddOfferProps> = ({ pseudo, marketIds, refreshMarkets }: AddOfferProps) => {
   const [offerValue, setOfferValue] = useState<number>(0)
-  const sendOffer = async () => {
+  const sendOffer: () => void = async () => {
     const now = new Date()
     const beforeNoon = now.getHours() < 12
     const startTime = new Date()
@@ -41,7 +41,7 @@ const AddOffer: React.FC<AddOfferProps> = ({ pseudo, marketIds, refreshMarkets }
     <input
       type='number'
       placeholder='$$$$'
-      onChange={(event) => setOfferValue(parseInt(event.target.value))}
+      onChange={(event): void => setOfferValue(parseInt(event.target.value))}
     />
     <button onClick={sendOffer}>Send Offer</button>
   </div>

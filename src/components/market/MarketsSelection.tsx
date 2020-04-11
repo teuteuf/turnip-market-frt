@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import * as MarketRepository from './MarketRepository'
+import * as MarketRepository from '../../repositories/MarketRepository'
 
 interface MarketsSelectionProps {
   addMarketId: (marketId: string) => void

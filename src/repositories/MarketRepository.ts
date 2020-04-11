@@ -1,5 +1,5 @@
-import { Market } from './domain/Market'
-import { Offer } from './domain/Offer'
+import { Market } from '../domain/Market'
+import { Offer } from '../domain/Offer'
 
 type CreateMarket = (marketName: string) => Promise<Market>
 type FindMarket = (marketId: string) => Promise<Market | null>

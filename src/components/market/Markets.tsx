@@ -1,19 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import MarketsSelection from './MarketsSelection'
-import { Market } from './domain/Market'
-import * as MarketRepository from './MarketRepository'
+import { Market } from '../../domain/Market'
+import * as MarketRepository from '../../repositories/MarketRepository'
 import MarketWithOffers from './MarketWithOffers'
 import AddOffer from './AddOffer'
 
 const keyLocalStorageMarketIds = 'marketIds'
 const marketIdsSeparator = '::'
 
-const getMarketIdsFromLocalStorage = () => {
+const getMarketIdsFromLocalStorage = (): string[] => {
   const marketsIdsAsString = localStorage.getItem(keyLocalStorageMarketIds)
   return (marketsIdsAsString && marketsIdsAsString.split('::')) || []
 }
 
-const setMarketIdsToLocalStorage = (marketIds: string[]) => {
+const setMarketIdsToLocalStorage = (marketIds: string[]): void => {
   localStorage.setItem(keyLocalStorageMarketIds, marketIds.join(marketIdsSeparator))
 }
 
@@ -33,10 +33,12 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   }, [marketIds])
 
   useEffect(() => {
-    refreshMarkets()
+    (async (): Promise<void> => {
+      await refreshMarkets()
+    })()
   }, [marketIds, refreshMarkets])
 
-  const addMarketId = (newMarketId: string) => setMarketIds([...marketIds, newMarketId])
+  const addMarketId = (newMarketId: string): void => setMarketIds([...marketIds, newMarketId])
 
   useEffect(() => {
     setMarketIdsToLocalStorage(marketIds)

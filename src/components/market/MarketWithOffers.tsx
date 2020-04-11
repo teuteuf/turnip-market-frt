@@ -1,4 +1,4 @@
-import { Market } from './domain/Market'
+import { Market } from '../../domain/Market'
 import React from 'react'
 
 interface MarketProps {
