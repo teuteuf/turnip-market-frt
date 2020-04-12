@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Offer } from '../../domain/Offer'
 import * as MarketRepository from '../../repositories/MarketRepository'
+import blockStyles from '../Block.module.css'
 
 interface AddOfferProps {
   pseudo: string
@@ -37,13 +38,19 @@ const AddOffer: React.FC<AddOfferProps> = ({ pseudo, marketIds, refreshMarkets }
     refreshMarkets()
   }
 
-  return <div>
+  return <div className={blockStyles.wrapper}>
     <input
       type='number'
       placeholder='$$$$'
       onChange={(event): void => setOfferValue(parseInt(event.target.value))}
+      className={blockStyles.element}
     />
-    <button onClick={sendOffer}>Send Offer</button>
+    <button
+      onClick={sendOffer}
+      className={`${blockStyles.element} ${blockStyles.button}`}
+    >
+      Send Offer
+    </button>
   </div>
 }
 

@@ -1,0 +1,26 @@
+.appWrapper {
+    background-color: #4d97d6;
+}
+
+header {
+    background-color: #c18c49;
+    padding: 0.5em;
+}
+
+h1 {
+    margin: 0 0 0.5em;
+    color: #f6cb15;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h2 {
+    margin: 0;
+    text-align: left;
+    color: white;
+    font-size: 1.25em;
+}
+
+.content {
+    padding: 0.5em;
+}

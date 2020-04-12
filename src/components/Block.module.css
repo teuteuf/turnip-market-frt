@@ -1,0 +1,62 @@
+.wrapper {
+    padding: 0.5em;
+    margin: auto auto 0.5em;
+    border-radius: 0.75em;
+    background-color: #fff9e5;
+    max-width: 30em;
+}
+
+.wrapper h3 {
+    margin: 0 0 0.25em;
+    padding: 0.125em 0;
+    text-align: center;
+    border-radius: 0.125em;
+    background-color: #c18c49;
+    color: #f6cb15;
+    font-size: 2em;
+}
+
+.element {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 0.25em;
+    font-size: 1.5em;
+    border: none;
+    color: #525456;
+}
+
+.element h4 {
+    margin: 0 0 0.25em;
+}
+
+.element ul {
+    margin: 0 0 0.75em;
+    padding: 0;
+    border-radius: 0.125em;
+    background-color: white;
+}
+
+.element li {
+    list-style: none;
+}
+
+.element li div {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+
+.button {
+    background-color: #35bcad;
+    color: white;
+    border-radius: 0.125em;
+    line-height: 1.5em;
+}
+
+.button:hover {
+    background-color: #36c6b7;
+}
+
+.button:active {
+    background-color: #36b2a3;
+}

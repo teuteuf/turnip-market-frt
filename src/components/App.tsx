@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PseudoInput from './PseudoInput'
 import Markets from './market/Markets'
+import styles from './App.module.css'
 
 const keyLocalStoragePseudo = 'pseudo'
 
@@ -12,7 +13,7 @@ const App: React.FC = () => {
   }, [pseudo])
 
   return (
-    <div>
+    <div className={styles.appWrapper}>
       <header>
         <h1>Turnip Market</h1>
         {pseudo && <h2>
@@ -20,10 +21,12 @@ const App: React.FC = () => {
         </h2>}
       </header>
 
-      {pseudo
-        ? <Markets pseudo={pseudo}/>
-        : <PseudoInput setPseudo={setPseudo}/>
-      }
+      <div className={styles.content}>
+        {pseudo
+          ? <Markets pseudo={pseudo}/>
+          : <PseudoInput setPseudo={setPseudo}/>
+        }
+      </div>
     </div>
   )
 }

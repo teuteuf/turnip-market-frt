@@ -4,6 +4,7 @@ import { Market } from '../../domain/Market'
 import * as MarketRepository from '../../repositories/MarketRepository'
 import MarketWithOffers from './MarketWithOffers'
 import AddOffer from './AddOffer'
+import blockStyles from '../Block.module.css'
 
 const keyLocalStorageMarketIds = 'marketIds'
 const marketIdsSeparator = '::'
@@ -45,8 +46,11 @@ const Markets: React.FC<MarketsProps> = ({ pseudo }: MarketsProps) => {
   }, [marketIds])
 
   return <div>
-    <AddOffer pseudo={pseudo} marketIds={marketIds} refreshMarkets={refreshMarkets} />
-    {markets.map((market) => <MarketWithOffers key={market.id} market={market}/>)}
+    <AddOffer pseudo={pseudo} marketIds={marketIds} refreshMarkets={refreshMarkets}/>
+    {markets.length > 0 && <div className={blockStyles.wrapper}>
+      <h3>Current Offers</h3>
+      {markets.map((market) => <div key={market.id} className={blockStyles.element}><MarketWithOffers market={market}/></div>)}
+    </div>}
     <MarketsSelection addMarketId={addMarketId}/>
   </div>
 }
