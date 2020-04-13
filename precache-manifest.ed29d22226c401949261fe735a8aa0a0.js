@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4f1ee9a14d906c92678f8911f2948f9",
+    "revision": "40b7ebb54a9dcb9c90060fe37a95b494",
     "url": "/turnip-market-frt/index.html"
   },
   {
